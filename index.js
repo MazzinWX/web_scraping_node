@@ -17,7 +17,7 @@ const getCompanies = async () => {
     const phone = cheerio('p.phone', innerHtml).text();
 
     return {
-      emailAddress,
+      mailAddress: emailAddress ? emailAddress.replace('mailto:', '') : '',
       link,
       name,
       phone,
